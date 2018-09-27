@@ -14,15 +14,15 @@ import rosegraphics as rg
 def main():
     """ Calls the various   TEST   functions in this module. """
     # run_test_make_simple_list()
-    run_test_make_simple_string()
+    # run_test_make_simple_string()
     # run_test_make_less_simple_string()
 
     # ------------------------------------------------------------------
-    # TODO: 8. Uncomment the tests below before working TO DO 9.
+    # Done: 8. Uncomment the tests below before working TO DO 9.
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    # run_test_draw_shapes()
+    run_test_draw_shapes()
     # run_test_rectangles_from_circles()
 
 
@@ -149,7 +149,7 @@ def make_simple_string(m, n):
 def run_test_make_less_simple_string():
     """ Tests the   make_less_simple_string    function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done: 6. Implement this TEST function.
     #   It TESTS the  make_less_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -159,6 +159,18 @@ def run_test_make_less_simple_string():
     print('--------------------------------------------------')
     print('Testing the   make_less_simple_string   function:')
     print('--------------------------------------------------')
+
+    # Test 1
+    expected = '1-2-3-4-5-6-7'
+    actual = make_less_simple_string(1, 7)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2
+    expected = '10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30'
+    actual = make_less_simple_string(10, 30)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_less_simple_string(m, n):
@@ -184,9 +196,17 @@ def make_less_simple_string(m, n):
       :type n: int
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -----------------------------------------------------------------
+    sequence = ''
+    q = n - m
+    for k in range(q + 1):
+        if k is q:
+            sequence = sequence + str(m + k) + ''
+        else:
+            sequence = sequence + str(m + k) + '-'
+    return sequence
 
 
 def run_test_draw_shapes():
@@ -267,7 +287,7 @@ def draw_shapes(shapes, window):
       :type window:  rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
+    # Done: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
     #     The testing code is already written for you (that you just enabled in TO DO 8).
     #
     ####################################################################
@@ -277,6 +297,10 @@ def draw_shapes(shapes, window):
     # FWIW: The word for ideas like this is "polymorphism".
     ####################################################################
     # ------------------------------------------------------------------
+    for k in range(len(shapes)):
+        shape = shapes[k]
+        shape.attach_to(window)
+        window.render(.3)
 
 
 def run_test_rectangles_from_circles():
