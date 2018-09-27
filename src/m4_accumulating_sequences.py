@@ -13,16 +13,16 @@ import rosegraphics as rg
 
 def main():
     """ Calls the various   TEST   functions in this module. """
-    # run_test_make_simple_list()
-    # run_test_make_simple_string()
-    # run_test_make_less_simple_string()
+    run_test_make_simple_list()
+    run_test_make_simple_string()
+    run_test_make_less_simple_string()
 
     # ------------------------------------------------------------------
     # Done: 8. Uncomment the tests below before working TO DO 9.
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    # run_test_draw_shapes()
+    run_test_draw_shapes()
     run_test_rectangles_from_circles()
 
 
