@@ -238,9 +238,13 @@ def index_of_first_negative(numbers):
       :rtype: int
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            return k
+    return -1
 
 
 def run_test_contains_an_a():
